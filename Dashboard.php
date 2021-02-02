@@ -1,13 +1,14 @@
 
 
 <?php 
-//header("Location: signup.php");
-if(isset($_SESSION['logged_user']) || !empty($_SESSION['logged_user'])) {
-    header("Location: signup.php");
+session_start();
+if(!isset($_SESSION['logged_user']) || empty($_SESSION['logged_user'])) {
+    header("Location: login.php");
   }
   $user = $_SESSION['logged_user'];
-  // echo $user['name'];
-  // echo $user['message'];
+  //print_r($user);
+  echo $user->name;
+//   echo $user['email'];
  ?>
 <!DOCTYPE html>
 <html lang="en">

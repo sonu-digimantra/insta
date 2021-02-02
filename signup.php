@@ -18,6 +18,9 @@
         div {
             padding-bottom:20px;
         }
+        .card-body {
+             padding: 0px 20px;
+         }
 
     </style>
 </head>
@@ -79,7 +82,7 @@ echo "login detail is not correct";
 
         <div class="row justify-content-center align-items-center" style="height:100vh">
             <div class="col-md-5">
-                <h1>User Register</h1>
+                <h1 style="padding-left: 20px;">User Register</h1>
                 <div class="card">
                     <div class="card-body">
                         <form  class="" action="" method="post">

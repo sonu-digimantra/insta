@@ -17,7 +17,9 @@
         div {
             padding-bottom:20px;
         }
-
+        .card-body {
+             padding: 0px 20px;
+         }
     </style>
 </head>
 <body>
@@ -25,6 +27,7 @@
 
 
  <?php 
+ session_start();
 if(isset($_POST['useremail']) && isset($_POST['password'])) {  
     $useremail=$_POST['useremail'];  
     $password=$_POST['password']; 
@@ -58,7 +61,9 @@ $arrvalue =Json_decode($result);
 // print_r($arrvalue->response) ;
 // die;
 if(isset($arrvalue->response)){
-    $_SESSION['logged_user'] = $arrvalue->response;
+  $tt  =$_SESSION['logged_user'] = $arrvalue->response;
+  print_r($tt);
+ // die;
     header("Location: Dashboard.php");
 }else{ 
 //header("Location: signup.php");
@@ -75,16 +80,16 @@ echo "login detail is not correct";
 
        <div class="row justify-content-center align-items-center" style="height:100vh">
             <div class="col-md-5">
-                <h1>User login</h1>
+                <h1 style="padding-left: 20px;">User login</h1>
                 <div class="card">
                     <div class="card-body">
                         <form  class="" action="" method="post">
                             <div class="form-group">
                                 <label> user email</label>
-                                <input type="text" class="form-control" name="useremail">
+                                <input type="email" class="form-control" name="useremail">
                             </div>
                             <div class="form-group">
-                                <label> user password</label>
+                                <label>password</label>
                                 <input type="password" class="form-control" name="password">
                             </div>
                          <input type="submit" value="submit" />
